@@ -1,4 +1,4 @@
-from flask import Flask, Blueprint
+from flask import Flask
 from controller import image_controller, text_controller
 
 app = Flask(__name__)

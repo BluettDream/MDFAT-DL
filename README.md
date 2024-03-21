@@ -5,6 +5,7 @@
 ```bash
 conda create -n mdfat python=3.9.18
 conda activate mdfat
-conda install -n mdfat flask opencv
+conda install -n mdfat flask
+pip install opencv-python
 ```
 > Note: need to install pytorch separately
