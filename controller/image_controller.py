@@ -5,5 +5,6 @@ img = Blueprint('img', __name__)
 
 @img.route("/image/matchPoints", methods=["POST"])
 def process():
-    tiny_img, big_img, threshold = request.files['tinyImg'], request.files['srcImg'], request.form['threshold']
-    return image_service.match_template(tiny_img, big_img, threshold)
+    threshold = float(request.form['threshold'])
+    tiny_img, big_img = request.files['matchImage.png'], request.files['templateImage.png']
+    return image_service.match_template(tiny_img, big_img, 0.50)

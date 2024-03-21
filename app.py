@@ -6,7 +6,7 @@ app.register_blueprint(image_controller.img)
 app.register_blueprint(text_controller.txt)
 
 
-@app.route("/")
+@app.route("/image/")
 def hello_world():
     return "Hello, World!"
 
