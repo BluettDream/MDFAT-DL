@@ -7,4 +7,4 @@ img = Blueprint('img', __name__)
 def process():
     threshold = float(request.form['threshold'])
     tiny_img, big_img = request.files['matchImage.png'], request.files['templateImage.png']
-    return image_service.match_template(tiny_img, big_img, 0.50)
+    return image_service.match_template(tiny_img, big_img, threshold)
