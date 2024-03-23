@@ -1,11 +1,14 @@
 from flask import Flask
+from controller import image_controller, text_controller
 
 app = Flask(__name__)
+app.register_blueprint(image_controller.img)
+app.register_blueprint(text_controller.txt)
 
 
-@app.route("/")
+@app.route("/image/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return "Hello, World!"
 
 
 if __name__ == "__main__":
