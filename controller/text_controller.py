@@ -1,8 +1,10 @@
-from flask import Blueprint
+from flask import Blueprint, request
+from service import text_service
 
 txt = Blueprint('txt', __name__)
 
 
-@txt.route("/text/")
+@txt.post("/text/matchPoints")
 def process():
-    return "Text processing..."
+    img_list = request.json['imageLinkList']
+    return text_service.extract_text(img_list)
